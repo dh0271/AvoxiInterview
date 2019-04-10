@@ -42,6 +42,7 @@ func main() {
 		port = "8000"
 	}
 
+	// define our function to be used to list all routes and associated HTTP verbs
 	walkFunc := func(method string, route string, handler http.Handler, middlewares ...func(http.Handler) http.Handler) error {
 		log.Printf("%s %s\n", method, route)
 		return nil
