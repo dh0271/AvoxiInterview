@@ -13,6 +13,7 @@ import (
 	"github.com/go-chi/render"
 )
 
+// Generates main routes used by our webservice
 func GenerateRoutes() *chi.Mux {
 	router := chi.NewRouter()
 	router.Use(
@@ -48,6 +49,7 @@ func main() {
 		return nil
 	}
 
+	// Walk through our created route(s) and verify they were created properly
 	if err := chi.Walk(router, walkFunc); err != nil {
 		log.Panicf("Error: %s\n", err.Error())
 	}
