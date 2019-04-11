@@ -47,3 +47,13 @@ v1Currently everything that has been developed is under V1 of our API and all st
 # Program structure
 
 Currently main.go holds all main code for initializing the service (Setting up routes, initializing DB and serving our routes). Within the persistence directory we have the persistence package which serves as our persistence layer. This allows us to maintain a single connection to our database and allow other modules to quickly access the database without starting a new connection. Finally we have the whitelist directory which currently holds our whitelist package (avoxi.go) this currently holds all of our V1 structures / datamappings and business logic.
+
+
+# Tests
+
+Included tests will test all code paths within the `IsWhitelistedV1` function other than the DB error case.
+
+To run tests, in the project root execute
+
+    go test ../...
+
